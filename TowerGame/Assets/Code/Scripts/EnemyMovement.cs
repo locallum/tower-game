@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void Update() {
-        if (Vector2.Distance(target.position, transform.position) <= 0.00001f) {
+        if (Vector2.Distance(target.position, transform.position) <= 0.1f) {
             pathIndex++;
 
 

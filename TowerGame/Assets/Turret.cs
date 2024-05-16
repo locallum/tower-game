@@ -12,6 +12,8 @@ public class Turret : MonoBehaviour {
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5f;
+    [SerializeField] private float rotationSpeed = 200f;
+
 
     private Transform target;
 
@@ -20,20 +22,30 @@ public class Turret : MonoBehaviour {
             FindTarget();
             return;
         }
+
         RotateTowardsTarget();
+
+        if (!CheckTargetIsInRange()) {
+            target = null;
+        }
+
+        }
+
+    private bool CheckTargetIsInRange() {
+        return Vector2.Distance(target.position, transform.position) <= targetingRange;
     }
 
     private void RotateTowardsTarget() {
-        float angle = Mathf.Atan(target.position.y - transform.position.y, target.position.x - transform.postion.x) * Mathf.Rad2Deg + 90f;
+        float angle = Mathf.Atan2(target.position.y - transform.position.y, target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
 
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
-        turretRotatationPoint.rotation = targetRotation;
+        turretRotatationPoint.rotation = Quaternion.RotateTowards(turretRotatationPoint.rotation, targetRotation, rotationSpeed * Time.deltaTime );
     }
 
     private void FindTarget() {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
 
-        if(hit.length > 0) {
+        if(hits.Length > 0) {
             target = hits[0].transform;
         }
     }
