@@ -158,9 +158,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5133417264335309414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa8ea5e320cd6d34c9d0447d614b2f1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 674ea3aaf966685428238aeb59f17aa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 6416199320070890793}
   bulletSpeed: 16
   bulletDamage: 1
