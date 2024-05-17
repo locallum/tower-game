@@ -43,18 +43,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 135750456841225281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9b7536f70f78748b207fd33a3ad1f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d8e89dcaf21a384cb24d4a3dcb7022e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRotatationPoint: {fileID: 4890277499295421003}
+  turretRotationPoint: {fileID: 3265541021301898644}
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 5133417264335309414, guid: 0c63640068d222545939f1094b59fbfd, type: 3}
+  projectilePrefab: {fileID: 5133417264335309414, guid: 0c63640068d222545939f1094b59fbfd, type: 3}
   firingPoint: {fileID: 713991380029381135}
-  targetingRange: 5
-  rotationSpeed: 1000
-  bps: 2
+  targetingRange: 4
+  rotationSpeed: 200
+  bps: 3
 --- !u!1 &2465248772327327054
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 5780749754486248422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

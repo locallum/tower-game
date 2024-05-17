@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8693059319172348745}
-  - component: {fileID: 691813363753787816}
+  - component: {fileID: -1427582470978664009}
   m_Layer: 0
   m_Name: Sniper Turret
   m_TagString: Untagged
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 3265541021301898644}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &691813363753787816
+--- !u!114 &-1427582470978664009
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,18 +43,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 135750456841225281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9b7536f70f78748b207fd33a3ad1f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f1662a87c2f642409f87803aab6397d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretRotatationPoint: {fileID: 4890277499295421003}
+  turretRotationPoint: {fileID: 3265541021301898644}
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 5133417264335309414, guid: 0c63640068d222545939f1094b59fbfd, type: 3}
+  projectilePrefab: {fileID: 5133417264335309414, guid: 0c63640068d222545939f1094b59fbfd, type: 3}
   firingPoint: {fileID: 713991380029381135}
-  targetingRange: 30
-  rotationSpeed: 1000
-  bps: 0.3
+  targetingRange: 20
+  rotationSpeed: 1200
+  bps: 0.5
 --- !u!1 &2465248772327327054
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a5eacaf4687655e4392d21326a719a07, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.35296822, a: 1}
+  m_Color: {r: 0.10107756, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 5780749754486248422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
