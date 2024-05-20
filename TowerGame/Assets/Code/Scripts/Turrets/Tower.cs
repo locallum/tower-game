@@ -7,6 +7,7 @@ public class Tower
     public string name;
     public int cost;
     public GameObject prefab;
+    public GameObject hoverPrefab;
 
     public Tower(string _name, int _cost, GameObject _prefab)
     {

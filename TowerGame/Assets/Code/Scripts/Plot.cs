@@ -9,44 +9,46 @@ public class Plot : MonoBehaviour
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Color hoverColor;
 
-    private GameObject tower;
-    private Color startColor;
-
-    private void Start()
-    {
-        startColor = sr.color;
-    }
+    private GameObject hoverTower; // Rename to hoverTower to distinguish it from the actual tower
+    private GameObject placedTower; // Store the placed tower separately
 
     private void OnMouseEnter()
     {
-
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        sr.color = hoverColor;
+        Tower towerToBuild = BuildManager.main.GetSelectedTower();
+        hoverTower = Instantiate(towerToBuild.hoverPrefab, transform.position, Quaternion.identity);
     }
 
     private void OnMouseExit()
     {
-        sr.color = startColor;
+        if (hoverTower != null)
+        {
+            Destroy(hoverTower);
+            hoverTower = null;
+        }
     }
 
     private void OnMouseDown()
     {
-
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        if (tower != null) return;
-
-        Tower towerToBuild = BuildManager.main.GetSelectedTower();
-
-        if (towerToBuild.cost > LevelManager.main.currency)
+        if (hoverTower != null)
         {
-            Debug.Log("You can't afford this tower");
-            return;
+            Destroy(hoverTower);
+            hoverTower = null;
+
+            Tower towerToBuild = BuildManager.main.GetSelectedTower();
+
+            if (towerToBuild.cost > LevelManager.main.currency)
+            {
+                Debug.Log("You can't afford this tower");
+                return;
+            }
+
+            LevelManager.main.SpendCurrency(towerToBuild.cost);
+
+            placedTower = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
         }
-
-        LevelManager.main.SpendCurrency(towerToBuild.cost);
-
-        tower = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
     }
 }
