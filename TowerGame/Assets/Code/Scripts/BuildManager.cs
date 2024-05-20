@@ -11,15 +11,18 @@ public class BuildManager : MonoBehaviour
 
     private int selectedTower = 0;
 
-    private void Awake() {
+    private void Awake()
+    {
         main = this;
     }
 
-    public Tower GetSelectedTower() {
+    public Tower GetSelectedTower()
+    {
         return towers[selectedTower];
     }
 
-    public void SetSelectedTower(int _selectedTower) {
+    public void SetSelectedTower(int _selectedTower)
+    {
         selectedTower = _selectedTower;
     }
 }

@@ -11,12 +11,14 @@ public class Menu : MonoBehaviour
 
     private bool isMenuOpen = true;
 
-    public void ToggleMenu() {
+    public void ToggleMenu()
+    {
         isMenuOpen = !isMenuOpen;
         anim.SetBool("MenuOpen", isMenuOpen);
     }
 
-    private void OnGUI() {
+    private void OnGUI()
+    {
         currencyUI.text = LevelManager.main.currency.ToString();
     }
 }

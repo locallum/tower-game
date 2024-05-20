@@ -12,24 +12,31 @@ public class LevelManager : MonoBehaviour
 
     public int currency;
 
-    private void Awake() {
+    private void Awake()
+    {
         main = this;
     }
 
-    private void Start() {
+    private void Start()
+    {
         currency = 100;
     }
 
-    public void IncreaseCurrency(int amount) {
+    public void IncreaseCurrency(int amount)
+    {
         currency += amount;
     }
 
-    public bool SpendCurrency(int amount) {
-        if (amount <= currency) {
+    public bool SpendCurrency(int amount)
+    {
+        if (amount <= currency)
+        {
             // BUY ITEM
             currency -= amount;
             return true;
-        } else {
+        }
+        else
+        {
             Debug.Log("You do not have enough");
             return false;
         }

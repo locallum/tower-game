@@ -84,9 +84,12 @@ public class EnemySpawner : MonoBehaviour
         timeSinceLastSpawn = 0f;
         currentWave++;
         LevelManager.main.IncreaseCurrency(50);
-        if (currentWave >= waveRows.Length) {
+        if (currentWave >= waveRows.Length)
+        {
             Debug.Log("Level Finished");
-        } else {
+        }
+        else
+        {
             StartCoroutine(StartWave());
         }
     }

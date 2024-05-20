@@ -12,30 +12,35 @@ public class Plot : MonoBehaviour
     private GameObject tower;
     private Color startColor;
 
-    private void Start() {
+    private void Start()
+    {
         startColor = sr.color;
     }
 
-    private void OnMouseEnter() {
+    private void OnMouseEnter()
+    {
 
-        if(EventSystem.current.IsPointerOverGameObject()) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         sr.color = hoverColor;
     }
 
-    private void OnMouseExit() {
+    private void OnMouseExit()
+    {
         sr.color = startColor;
     }
 
-    private void OnMouseDown() {
+    private void OnMouseDown()
+    {
 
-        if(EventSystem.current.IsPointerOverGameObject()) return;
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
         if (tower != null) return;
 
         Tower towerToBuild = BuildManager.main.GetSelectedTower();
 
-        if (towerToBuild.cost > LevelManager.main.currency) {
+        if (towerToBuild.cost > LevelManager.main.currency)
+        {
             Debug.Log("You can't afford this tower");
             return;
         }
